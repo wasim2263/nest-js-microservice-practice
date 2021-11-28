@@ -1,15 +1,14 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import {Transport, MicroserviceOptions} from '@nestjs/microservices'
+import { Transport } from '@nestjs/microservices';
 const logger = new Logger('Main');
 const microserviceOptions = {
   transport: Transport.TCP,
   options: {
     port: 8877,
-    host: '127.0.0.1'
-  }
-
+    host: '127.0.0.1',
+  },
 };
 
 async function bootstrap() {
@@ -23,6 +22,6 @@ async function bootstrap() {
     microserviceOptions,
   );
   app.listen();
-  logger.log('Microservice listening ...')
+  logger.log('Microservice listening ...');
 }
 bootstrap();
