@@ -20,6 +20,6 @@ export class AppService {
   }
   getFullName(data: string[]) {
     // return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
-    return this.clientProxy.send<string, string[]>('full-name', data)
+    return this.clientProxy.send<string, string[]>('full-name', data);
   }
 }
