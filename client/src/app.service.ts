@@ -22,4 +22,9 @@ export class AppService {
     // return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
     return this.clientProxy.send<string, string[]>('full-name', data);
   }
+
+  getSummation(data: number[]) {
+    // return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
+    return this.clientProxy.send<number, number[]>('full-name', data);
+  }
 }
