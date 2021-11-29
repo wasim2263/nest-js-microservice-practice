@@ -10,4 +10,10 @@ export class AppController {
     this.logger.log('adding', data[1]);
     return this.appService.getFullName(data);
   }
+  @Post('summation')
+  async getSummation(@Body('data') data: number[]) {
+    this.logger.log('adding', data[0]);
+    this.logger.log('adding', data[1]);
+    // return this.appService.getFullName(data);
+  }
 }
