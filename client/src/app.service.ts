@@ -25,6 +25,6 @@ export class AppService {
 
   getSummation(data: number[]) {
     // return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
-    return this.clientProxy.send<number, number[]>('full-name', data);
+    return this.clientProxy.send<number, number[]>('summation', data);
   }
 }
