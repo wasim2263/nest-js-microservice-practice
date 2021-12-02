@@ -12,8 +12,8 @@ export class AppController {
   }
   @Post('summation')
   async getSummation(@Body('data') data: number[]) {
-    this.logger.log('adding', data[0]);
-    this.logger.log('adding', data[1]);
+    this.logger.log('adding 1', data[0]);
+    this.logger.log('adding 2', data[1]);
     return this.appService.getSummation(data);
   }
 }

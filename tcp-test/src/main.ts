@@ -17,6 +17,8 @@ async function bootstrap() {
   // await app.listen(3000);
 
   // Logger.log('Listening at http://localhost:' + 3000 + '/', 'Bootstrap');
+  console.log(microserviceOptions);
+
   const app = await NestFactory.createMicroservice(
     AppModule,
     microserviceOptions,

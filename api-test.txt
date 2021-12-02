@@ -7,3 +7,11 @@ content-type: application/json
     "data": ["was", "im", "werwer"]
 }
 
+
+POST http://localhost:3000/summation HTTP/1.1
+content-type: application/json
+
+
+{
+    "data": [1, 2, 3, 16]
+}

@@ -5,7 +5,7 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
-  getFullName(data: string[]): string {
-    return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
+  getSummation(data: number[]): number {
+    return (data || []).reduce((acc, data) => acc + data);
   }
 }

@@ -21,10 +21,10 @@ export class AppController {
   //   this.logger.log('adding', data[1]);
   //   return this.appService.getFullName(data);
   // }
-  @MessagePattern('full-name')
-  async getTCPFullName(data: string[]) {
+  @MessagePattern('summation')
+  async getRedisSummation(data: number[]) {
     this.logger.log('adding', data[0]);
     this.logger.log('adding', data[1]);
-    return this.appService.getFullName(data);
+    return this.appService.getSummation(data);
   }
 }
