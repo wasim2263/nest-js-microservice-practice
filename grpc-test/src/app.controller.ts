@@ -13,9 +13,9 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @GrpcMethod('AppController', 'GetMultiplication')
-  getGrpcMultiplication(data: INumberArray): IMultiplicationOfNumberArray {
+  getGrpcMultiplication(data: INumberArray, metadata:any): IMultiplicationOfNumberArray {
     this.logger.log('adding', data[0]);
     this.logger.log('adding', data[1]);
-    return { multiplication: this.appService.getSummation(data.data) };
+    return { multiplication: this.appService.getMultiplication(data.data) };
   }
 }
