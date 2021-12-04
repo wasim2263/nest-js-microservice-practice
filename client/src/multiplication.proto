@@ -1,0 +1,14 @@
+syntax = 'proto3';
+package test.multiplication;
+
+service AppController{
+    rpc GetMultiplication (NumberArray) returns (MultiplicationOfNumberArray);
+}
+
+message NumberArray {
+    repeated double data = 1;
+}
+
+message MultiplicationOfNumberArray {
+    double data = 1;
+}
