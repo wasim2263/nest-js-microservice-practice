@@ -4,11 +4,12 @@ import { AppModule } from './app.module';
 import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
 const logger = new Logger('Main');
+console.log(join(__dirname, 'multiplication.proto'))
 const microserviceOptions = {
   transport: Transport.GRPC,
   options: {
-    package: 'test-multiplication',
-    protoPath: join(__dirname, 'multiplication.proto')
+    package: 'test.multiplication',
+    protoPath: join(__dirname, '../src/multiplication.proto')
   },
 };
 
