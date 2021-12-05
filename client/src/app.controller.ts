@@ -19,7 +19,7 @@ export class AppController {
     return this.appService.getSummation(data);
   }
   @Post('multiplication')
-  getMultiplication(@Body('data') data: number[]) {
+   getMultiplication(@Body('data') data: number[]) {
     return this.appGrpcService.getMultiplication(data);
   }
 }

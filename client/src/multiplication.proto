@@ -10,5 +10,5 @@ message NumberArray {
 }
 
 message MultiplicationOfNumberArray {
-    double data = 1;
+    double multiplication = 1;
 }
