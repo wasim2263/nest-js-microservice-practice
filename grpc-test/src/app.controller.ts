@@ -14,8 +14,8 @@ export class AppController {
 
   @GrpcMethod('AppController', 'GetMultiplication')
   getGrpcMultiplication(data: INumberArray, metadata:any): IMultiplicationOfNumberArray {
-    this.logger.log('adding', data[0]);
-    this.logger.log('adding', data[1]);
-    return { multiplication: this.appService.getMultiplication(data.data) };
+    const result =  { multiplication: this.appService.getMultiplication(data.data) }
+   console.log(result);
+    return result;
   }
 }

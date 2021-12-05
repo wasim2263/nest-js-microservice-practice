@@ -1,8 +1,8 @@
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 interface INumberArray {
-    data: number[];
-  }
-  export interface IGrpcService {
-    getMultiplication(data: INumberArray):Observable<any>;
-  }
+  data: number[];
+}
+export interface IGrpcService {
+  getMultiplication(data: INumberArray): Observable<any>;
+}

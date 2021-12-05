@@ -22,8 +22,7 @@ export class AppService {
     this.redisClientProxy = ClientProxyFactory.create({
       transport: Transport.REDIS,
       options: {
-        url:'redis://localhost:6379'
-      
+        url: 'redis://localhost:6379',
       },
     });
   }
@@ -34,7 +33,10 @@ export class AppService {
 
   getSummation(data: number[]) {
     // return (data || []).reduce((acc, data) => acc + ' ' + data) + ' test';
-    const result = this.redisClientProxy.send<number, number[]>('summation', data)
+    const result = this.redisClientProxy.send<number, number[]>(
+      'summation',
+      data,
+    );
     console.log(result);
     return result;
   }
