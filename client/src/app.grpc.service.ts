@@ -13,7 +13,9 @@ export class AppGrpcService implements OnModuleInit {
   onModuleInit() {
     this.grpcService = this.client.getService<IGrpcService>('AppController');
   }
-  async getMultiplication(data: number[]): Promise<IMultiplicationOfNumberArray> {
+  async getMultiplication(
+    data: number[],
+  ): Promise<IMultiplicationOfNumberArray> {
     console.log('getMultiplication', data);
     const result = await this.grpcService
       .getMultiplication({ data })
