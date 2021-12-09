@@ -7,5 +7,7 @@ export interface IMultiplicationOfNumberArray {
   multiplication: number;
 }
 export interface IGrpcService {
-  getMultiplication(data: INumberArray): Observable<IMultiplicationOfNumberArray>;
+  getMultiplication(
+    data: INumberArray,
+  ): Observable<IMultiplicationOfNumberArray>;
 }
