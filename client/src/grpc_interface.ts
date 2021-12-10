@@ -7,6 +7,7 @@ export interface IMultiplicationOfNumberArray {
   multiplication: number;
 }
 
+
 export interface IGrpcService {
   getMultiplication(
     data: INumberArray,
