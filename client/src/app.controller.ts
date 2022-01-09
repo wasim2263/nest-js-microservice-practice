@@ -32,6 +32,6 @@ export class AppController {
 
   @Post('send-background-queue')
   sendBackgroundQueue(@Body('data') data: number[]) {
-    return this.appService.getFullName(data);
+    // return this.appService.getFullName(data);
   }
 }
