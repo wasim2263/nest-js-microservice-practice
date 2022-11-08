@@ -1,6 +1,7 @@
 import { AppService } from './app.service';
-import { Body, Controller, Logger, Post } from '@nestjs/common';
+import {Body, Controller, Get, Logger, Param, Post} from '@nestjs/common';
 import { AppGrpcService } from './app.grpc.service';
+import {KafkaService} from "./kafka.service";
 
 @Controller()
 export class AppController {
@@ -9,6 +10,7 @@ export class AppController {
   constructor(
     private readonly appService: AppService,
     private readonly appGrpcService: AppGrpcService,
+    private readonly kafkaService: KafkaService,
   ) {}
 
   @Post('full-name')
@@ -34,4 +36,10 @@ export class AppController {
   sendBackgroundQueue(@Body('data') data: number[]) {
     // return this.appService.getFullName(data);
   }
+
+  @Get('/test/:id')
+  getHello(@Param('id') id) {
+    return this.kafkaService.getUserById(id);
+  }
+
 }
