@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppGrpcService } from './app.grpc.service';
 import { AppService } from './app.service';
 import { BullModule } from '@nestjs/bull';
-import {KafkaService} from "./kafka.service";
+import { KafkaService } from './kafka.service';
 
 @Module({
   imports: [

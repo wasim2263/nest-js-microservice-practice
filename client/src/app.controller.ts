@@ -1,7 +1,7 @@
 import { AppService } from './app.service';
-import {Body, Controller, Get, Logger, Param, Post} from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { AppGrpcService } from './app.grpc.service';
-import {KafkaService} from "./kafka.service";
+import { KafkaService } from './kafka.service';
 
 @Controller()
 export class AppController {
@@ -37,9 +37,8 @@ export class AppController {
     // return this.appService.getFullName(data);
   }
 
-  @Get('/test/:id')
-  getHello(@Param('id') id) {
-    return this.kafkaService.getUserById(id);
+  @Get('/test/:name')
+  getHello(@Param('name') name) {
+    return this.kafkaService.getUserInfo(name);
   }
-
 }
