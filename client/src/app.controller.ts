@@ -39,6 +39,7 @@ export class AppController {
 
   @Get('/test/:name')
   getHello(@Param('name') name) {
+    this.kafkaService.publishEvent();
     return this.kafkaService.getUserInfo(name);
   }
 }

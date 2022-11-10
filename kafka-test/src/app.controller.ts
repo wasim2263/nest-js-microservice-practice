@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import {EventPattern, MessagePattern, Payload} from '@nestjs/microservices';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,5 +11,9 @@ export class AppController {
     const userName = message.value.userName;
     // Plus operator here does string to number conversion on the fly
     return this.appService.helloUser(userName);
+  }
+  @EventPattern('user-created')
+  async userCreatedEvent(data: Record<string, unknown>) {
+    console.log('user-created even emitted', data);
   }
 }

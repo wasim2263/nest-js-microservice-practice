@@ -29,4 +29,11 @@ export class KafkaService {
   getUserInfo(name: string) {
     return this.client.send('user-topic', { userName: name });
   }
+  async publishEvent() {
+    console.log('publish event service');
+    this.client.emit('user-created', {
+      bookName: 'The Way Of Kings',
+      author: 'Brandon Sanderson',
+    });
+  }
 }
